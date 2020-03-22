@@ -62,7 +62,7 @@ app.put('/todos/:id', async (req, res) => {
       [description, id]
     );
 
-    res.json('todo was updated');
+    // res.json('todo was updated', updateTodo);
   } catch (err) {
     console.error(err.message);
   }
@@ -78,7 +78,6 @@ app.delete('/todos/:id', async (req, res) => {
       [id]
     );
 
-    res.json('todo was deleted');
   } catch (err) {
     console.error(err.message);
   }
