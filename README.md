@@ -63,7 +63,6 @@
 
 * Change to `/client` directory
 * Install dependencies using `npm i`. (I have not tried this method and cannot be sure it will work)
-* Alternatively - and better - create new React project using `npx create-react-app my-app`
 * run `npm start`. Frontend will open at `http://localhost:3000/`
 
 ## :computer: Code Examples - Backend

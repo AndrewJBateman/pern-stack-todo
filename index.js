@@ -2,27 +2,29 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const path = require("path");
+const PORT = process.env.PORT || 5000;
+
+// process.env.PORT
+// process.env.NODE_ENV => production or undefined
+
 
 // middleware
 app.use(cors());
 app.use(express.json()); // req.body
 
+app.use(express.static(path.join(__dirname, "client/build")));
+
+if(process.env.NODE_ENV === "production") {
+  // service static content
+  // npm run build
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
+
+console.log(__dirname);
+console.log(path.join(__dirname, "client/build"));
+
 // ROUTES
-
-// create a todo
-app.post("/todos", async (req, res) => {
-  try {
-    const { description } = req.body;
-    const newTodo = await pool.query(
-      "INSERT INTO todo (description) VALUES($1) RETURNING *",
-      [description]
-    );
-
-    res.json(newTodo.rows[0]);
-  } catch (err) {
-    console.error(err.message);
-  }
-});
 
 // get all todos
 app.get("/todos", async (req, res) => {
@@ -42,8 +44,23 @@ app.get("/todos/:id", async (req, res) => {
     const todo = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [
       id,
     ]);
-
     res.json(todo.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+// create a todo
+app.post("/todos", async (req, res) => {
+  try {
+    console.log(req.body);
+    const { description } = req.body;
+    const newTodo = await pool.query(
+      "INSERT INTO todo (description) VALUES($1) RETURNING *",
+      [description]
+    );
+
+    res.json(newTodo.rows[0]);
   } catch (err) {
     console.error(err.message);
   }
@@ -77,6 +94,10 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("server has started on port 5000");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log("server has started on port: ", PORT);
 });
