@@ -7,7 +7,13 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5000/todos", {
+      //proxy is only used in development so it will be ignored in production
+      //so if there is no http://localhost:5000 then by default it is going to use the heroku domain
+      //remember this heroku app is just our server serving the build static content and also holding the restful api
+
+      //https://pern-stack-todo-app.herokuapp.com/todos
+      // eslint-disable-next-line
+      const response = await fetch("/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -18,13 +24,13 @@ const InputTodo = () => {
       console.error(err.message);
     }
   };
-
   return (
     <Fragment>
-      <h1 className="text-center mt-5">PERN Todo List</h1>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <h1 className="text-center my-5">Input Todo</h1>
+      <form className="d-flex" onSubmit={onSubmitForm}>
         <input
           type="text"
+          placeholder="add todo"
           className="form-control"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
