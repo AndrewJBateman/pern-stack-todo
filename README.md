@@ -48,21 +48,20 @@
 * [React framework v16](https://reactjs.org/)
 * [Bootstrap v4](https://getbootstrap.com/) component library
 
-## :floppy_disk: Setup - Backend
+## :floppy_disk: Dev Setup - Backend
 
-* Change to `/server` directory
 * Install dependencies using `npm i`
-* Install [nodemon v2.0.2](https://www.npmjs.com/package/nodemon) globally if you don't already have it
+* Install [nodemon](https://www.npmjs.com/package/nodemon) globally if you don't already have it
 * Install [PostgreSQL](https://www.postgresql.org/) & run it (requires the password you created during installation)
 * Add database access credentials to `db.js` - recommend installing [npm dotenv](https://www.npmjs.com/package/dotenv) & using .env to hide credentials if commiting to Github
 * Postgresql shell commands: `\l` list all databases. `\c` database1 connect to database1. `\dt` inspect tables. `\d+` inspect table & show relation information. `\q` to quit.
-* Run `nodemon server` for a dev server
+* From root run `nodemon server` for a dev server
 * `http://localhost:5000/` can be accessed for CRUD operations such as POST, GET, PUT, DELETE etc. using Postman
 
-## :floppy_disk: Setup - Frontend
+## :floppy_disk: Dev Setup - Frontend
 
-* Change to `/client` directory
-* Install dependencies using `npm i`. (I have not tried this method and cannot be sure it will work)
+* Change to `client` directory
+* Install dependencies using `npm i`.
 * run `npm start`. Frontend will open at `http://localhost:3000/`
 
 ## :computer: Code Examples - Backend

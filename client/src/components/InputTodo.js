@@ -11,7 +11,7 @@ const InputTodo = () => {
       //so if there is no http://localhost:5000 then by default it is going to use the heroku domain
       //remember this heroku app is just our server serving the build static content and also holding the restful api
 
-      //https://pern-stack-todo-app.herokuapp.com/todos
+      //https://pern-stack-todoapp.herokuapp.com/todos
       // eslint-disable-next-line
       const response = await fetch("/todos", {
         method: "POST",

@@ -31,8 +31,6 @@ const ListTodos = () => {
     getTodos();
   }, []);
 
-  console.log(todos);
-
   return (
     <Fragment>
       {" "}

@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json()); // req.body
 
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
-if(process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   // service static content
   // npm run build
   app.use(express.static(path.join(__dirname, "client/build")));
