@@ -4,16 +4,11 @@ const InputTodo = () => {
   const [description, setDescription] = useState("");
 
   const onSubmitForm = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
       const body = { description };
-      //proxy is only used in development so it will be ignored in production
-      //so if there is no http://localhost:5000 then by default it is going to use the heroku domain
-      //remember this heroku app is just our server serving the build static content and also holding the restful api
 
-      //https://pern-stack-todoapp.herokuapp.com/todos
-      // eslint-disable-next-line
-      const response = await fetch("/todos", {
+      await fetch("/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

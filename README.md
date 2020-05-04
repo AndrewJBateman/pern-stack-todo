@@ -64,6 +64,14 @@
 * Install dependencies using `npm i`.
 * run `npm start`. Frontend will open at `http://localhost:3000/`
 
+## :floppy_disk: To Deploy to Heroku
+
+* Once package.json scripts added and you are logged into Heroku with project creaeted there, then:
+* Run `git add .` then `git commit -m "code added for Heroku deployment"` to add all changes
+* Run `heroku git:remote -a pern-stack-todoapp` - this is my example
+* Run `git push heroku master``to send app to Heroku
+* Run `heroku open` to open app in a browser window
+
 ## :computer: Code Examples - Backend
 
 * backend `index.js`: express post method used to add new todo [description] to postgreSQL database using SQL INSERT INTO statement
@@ -120,8 +128,8 @@ app.post('/todos', async (req, res) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working front and back ends.
-* To-Do: Add commenting. Add functionality.
+* Status: Working & deployed to Heroku.
+* To-Do: add refresh so edits shown with havig to refresh or wait for another task add. Add commenting. Add functionality.
 
 ## :clap: Inspiration/General Tools
 

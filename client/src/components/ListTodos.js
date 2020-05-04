@@ -8,8 +8,7 @@ const ListTodos = () => {
 
   async function deleteTodo(id) {
     try {
-      // eslint-disable-next-line
-      const res = await fetch(`/todos/${id}`, {
+      await fetch(`/todos/${id}`, {
         method: "DELETE",
       });
 
@@ -21,9 +20,7 @@ const ListTodos = () => {
 
   async function getTodos() {
     const res = await fetch("/todos");
-
     const todoArray = await res.json();
-
     setTodos(todoArray);
   }
 
@@ -43,12 +40,6 @@ const ListTodos = () => {
           </tr>
         </thead>
         <tbody>
-          {/*<tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr> */}
-
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
