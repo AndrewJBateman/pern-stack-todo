@@ -1,6 +1,6 @@
 # :zap: PERN Full Stack Todo
 
-* PostgreSQL Express React Node (PERN) full-stack app, integrates React frontend with Node.js backend. Tutorial code (see 'Inspiration' below)
+* PostgreSQL Express React Node (PERN) full-stack app, integrates React frontend with Node.js backend that is deployed to Heroku. Tutorial code by The Stoic Programmers (see 'Inspiration' below)
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -24,7 +24,7 @@
 
 ### Frontend
 
-* React frontend includes a simple todo list with a user input field and a table of todos below. User can edit and delete todos.
+* React frontend includes a simple todo list with a user input field and a table of todos below. User can edit and delete todos
 * [JavaScript XML (JSX)](https://reactjs.org/docs/introducing-jsx.html) used to write HTML elements in Javascript
 * [React Fragments](https://reactjs.org/docs/fragments.html) used to show table of todos as a row with columns in the DDM
 
@@ -54,7 +54,7 @@
 * Install [nodemon](https://www.npmjs.com/package/nodemon) globally if you don't already have it
 * Install [PostgreSQL](https://www.postgresql.org/) & run it (requires the password you created during installation)
 * Add database access credentials to `db.js` - recommend installing [npm dotenv](https://www.npmjs.com/package/dotenv) & using .env to hide credentials if commiting to Github
-* Postgresql shell commands: `\l` list all databases. `\c` database1 connect to database1. `\dt` inspect tables. `\d+` inspect table & show relation information. `\q` to quit.
+* Postgresql shell commands: `\l` list all databases. `\c` database1 connect to database1. `\dt` inspect tables. `\d+` inspect table & show relation information. `\q` to quit
 * From root run `nodemon server` for a dev server
 * `http://localhost:5000/` can be accessed for CRUD operations such as POST, GET, PUT, DELETE etc. using Postman
 
@@ -66,7 +66,16 @@
 
 ## :floppy_disk: To Deploy to Heroku
 
-* Once package.json scripts added and you are logged into Heroku with project creaeted there, then:
+* Assumes you have [Heroku](https://www.heroku.com) installed
+* Server folder contents moved to root directory. Heroku must see package.json in root
+* db.js includes ternery expression to choose connection config
+* package.json (server) `heroku-postbuild` script added
+* Heroku scripts order: `heroku pre-build, npm install, heroku-postbuild, run start script`
+* client files edited: change to use proxy for dev address
+* Once package.json scripts added and you are logged into Heroku:
+* Create project: `heroku create pern-stack-todoapp`
+* Add Heroku database addon: `heroku addons:create heroku-postgresql:hobby-dev -a pern-stack-todoapp`
+* To access Heroku database: `pg:psql -a pern-stack-todoapp`
 * Run `git add .` then `git commit -m "code added for Heroku deployment"` to add all changes
 * Run `heroku git:remote -a pern-stack-todoapp` - this is my example
 * Run `git push heroku master``to send app to Heroku
@@ -133,8 +142,8 @@ app.post('/todos', async (req, res) => {
 
 ## :clap: Inspiration/General Tools
 
-* [PERN Stack Course - PostgreSQL, Express, React, and Node](https://www.youtube.com/watch?v=ldYcgPKEZC8&t=116s)
-* [How to Deploy a PERN application on Heroku](https://www.youtube.com/watch?v=ZJxUOOND5_A&t=13s)
+* [The Stoic Programmers, PERN Stack Course - PostgreSQL, Express, React, and Node](https://www.youtube.com/watch?v=ldYcgPKEZC8&t=116s)
+* [The Stoic Programmers, How to Deploy a PERN application on Heroku](https://www.youtube.com/watch?v=ZJxUOOND5_A&t=13s)
 * [React documentation](https://reactjs.org/docs/getting-started.html)
 * [Enable Emmet support for JSX in Visual Studio Code | React](https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c)
 * [js-beautify for VS Code](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)

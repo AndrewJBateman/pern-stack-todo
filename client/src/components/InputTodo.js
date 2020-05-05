@@ -4,10 +4,9 @@ const InputTodo = () => {
   const [description, setDescription] = useState("");
 
   const onSubmitForm = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     try {
       const body = { description };
-
       await fetch("/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

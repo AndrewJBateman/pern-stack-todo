@@ -5,15 +5,11 @@ const pool = require("./db");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 
-// process.env.PORT
 // process.env.NODE_ENV => production or undefined
-
 
 // middleware
 app.use(cors());
 app.use(express.json()); // req.body
-
-// app.use(express.static(path.join(__dirname, "client/build")));
 
 if (process.env.NODE_ENV === "production") {
   // service static content
@@ -21,16 +17,12 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 }
 
-console.log(__dirname);
-console.log(path.join(__dirname, "client/build"));
-
 // ROUTES
 
 // get all todos
 app.get("/todos", async (req, res) => {
   try {
     const allTodos = await pool.query("SELECT * from todo");
-
     res.json(allTodos.rows);
   } catch (err) {
     console.error(err.message);
