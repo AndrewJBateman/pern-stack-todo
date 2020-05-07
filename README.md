@@ -78,7 +78,7 @@
 * To access Heroku database: `pg:psql -a pern-stack-todoapp`
 * Run `git add .` then `git commit -m "code added for Heroku deployment"` to add all changes
 * Run `heroku git:remote -a pern-stack-todoapp` - this is my example
-* Run `git push heroku master``to send app to Heroku
+* Run `git push heroku master` to send app to Heroku
 * Run `heroku open` to open app in a browser window
 
 ## :computer: Code Examples - Backend
@@ -138,7 +138,7 @@ app.post('/todos', async (req, res) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working & deployed to Heroku.
-* To-Do: add refresh so edits shown with havig to refresh or wait for another task add. Add commenting. Add functionality.
+* To-Do: Add commenting. Add functionality.
 
 ## :clap: Inspiration/General Tools
 
