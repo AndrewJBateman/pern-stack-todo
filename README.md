@@ -138,7 +138,7 @@ app.post('/todos', async (req, res) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working & deployed to Heroku.
-* To-Do: Add commenting. Add functionality.
+* To-Do: Add commenting. Add npm concurrently to run front & back ends with 1 command. Add functionality. order todos so recent one is top.
 
 ## :clap: Inspiration/General Tools
 
