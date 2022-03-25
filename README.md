@@ -1,19 +1,28 @@
 # :zap: PERN Full Stack Todo
 
 * PostgreSQL Express React Node (PERN) full-stack app, integrates React frontend with Node.js backend that is deployed to Heroku. Tutorial code by The Stoic Programmers (see 'Inspiration' below)
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/pern-stack-todo?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/pern-stack-todo?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/pern-stack-todo?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/pern-stack-todo?style=plastic)
 
 ## :page_facing_up: Table of contents
 
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+* [:zap: PERN Stack Todo](#zap-pern-stack-todo)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:wrench: Testing](#wrench-testing)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
+  * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
 
@@ -138,7 +147,7 @@ app.post('/todos', async (req, res) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working & deployed to Heroku.
-* To-Do: Add commenting. Add npm concurrently to run front & back ends with 1 command. Add functionality. order todos so recent one is top.
+* To-Do: Add commenting. Add npm concurrently to run front & back ends with 1 command. Add functionality. Order todos so recent one is top.
 
 ## :clap: Inspiration/General Tools
 
@@ -148,6 +157,10 @@ app.post('/todos', async (req, res) => {
 * [Enable Emmet support for JSX in Visual Studio Code | React](https://medium.com/@eshwaren/enable-emmet-support-for-jsx-in-visual-studio-code-react-f1f5dfe8809c)
 * [js-beautify for VS Code](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
