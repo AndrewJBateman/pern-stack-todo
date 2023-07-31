@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 12345pass
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - todos-network
+
+  backend:
+    container_name: node_api
+    restart: unless-stopped
+    image: backend_image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    networks:
+      - todos-network
+
+  frontend:
+    container_name: react
+    restart: unless-stopped
+    image: frontend_image
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    stdin_open: true
+    depends_on:
+      - backend
+    networks:
+      - todos-network
+
+networks:
+  todos-network:
