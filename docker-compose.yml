@@ -6,7 +6,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: 12345pass
+      POSTGRES_PASSWORD: 1234pass
     volumes:
       - ./postgres:/var/lib/postgresql/data
     networks:
@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3001:3000"
+      - "5000:5000"
     depends_on:
       - postgres
     env_file:
@@ -36,7 +36,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "3001:3000"
     stdin_open: true
     depends_on:
       - backend
